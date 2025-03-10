@@ -10,7 +10,7 @@ public class Question
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "g_id")
+    @Column(name = "q_id")
     private int id;
     @Column(name = "q_text")
     private String text;
