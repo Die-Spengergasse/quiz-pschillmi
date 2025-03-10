@@ -1,8 +1,11 @@
 package at.spengergasse.entities;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name ="q_questions")
+
 public class Question
 {
     @Id
@@ -11,12 +14,16 @@ public class Question
     private int id;
     @Column(name = "q_text")
     private String text;
+    @OneToMany
+    @JoinColumn(name = "fk_q_id")
+    private List<Answer> answersList = new ArrayList<>();
 
     @Override
     public String toString() {
         return "Question{" +
                 "id=" + id +
                 ", text='" + text + '\'' +
+                ", answersList=" + answersList +
                 '}';
     }
 
